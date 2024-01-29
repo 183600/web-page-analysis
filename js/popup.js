@@ -2,16 +2,12 @@
 //本项目基于chrome-extensions-samples-main修改，并且此文件修改了
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, {action: "getText"}, function(response) {
-        console.log(response)
     try {
       if (response && response.text) {
         let text = response.text;
         let words = tokenizeText(text);
-        console.log(words)
         let wordCount = countWords(words);
-        console.log(wordCount)
         let sortedWordCount = sortWordCount(wordCount);
-        console.log(sortedWordCount)
         displayWordCount(sortedWordCount);
       } else {
         document.getElementById("wordCount").innerText = "No text found on the current page.";
