@@ -20,35 +20,38 @@ limitations under the License.
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.4.15/vue.global.min.js"></script>
-
-<div id="app">{{ message }}</div>
-
-<script>
-  const { createApp, ref } = Vue
-
-  createApp({
-    setup() {
-      const message = ref('Hello vue!')
-      return {
-        message
-      }
-    }
-  }).mount('#app')
 </script>
   <title>Text Counter</title>
   <style>
     body {
+overflow: hidden;
       width: 300px; /* 设置宽度为300像素 */
     }
   div {
     font-size: 16px;
+color: #213547;
+    margin-left: 10px;
   }
-  </style> <script src="js/popup.js"></script>
+  p {
+color: #213547;
+    font-size: 26px;
+    margin-left: 20px;
+  }
+  h3 {
+color: #213547;
+    margin-left: 20px;
+  }
+  .colored-div {
+  background-color: #e2e2e2;
+  height: 1px;
+}
+  </style> 
+  <script src="js/popup.js"></script>
 </head>
 <body>
   <h3>网页分析</h3>
-  <h2>词频</h2> 
+    <div id="fengexian", class="colored-div"></div>
+  <p>词频</p> 
   <div id="wordCount"></div>
 </body>
 </html>
