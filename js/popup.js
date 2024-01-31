@@ -10,7 +10,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         let sortedWordCount = sortWordCount(wordCount);
         displayWordCount(sortedWordCount);
       } else {
-        document.getElementById("wordCount").innerText = "No text found on the current page.请刷新网页";
+        document.getElementById("wordCount").innerText = "No text found on the current page.\n请刷新网页，或者切换到除浏览器和扩展意外的页面";
       }
     } catch (error) {
       console.error("Error handling response: " + error.message);
