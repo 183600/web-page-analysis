@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "网页分析",
+  "name": "词频",
   "version": "1.0",
-  "description": "本项目可以读取网页标题并分词，然后搜索或者复制，搜索或者复制时文字的顺序由点击的顺序决定",
+  "description": "本项目基于chrome-extensions-samples-main修改。本项目使用MIT许可。本项目是一个Chrome扩展，用来分析网站词频",
 "background": {
     "service_worker": "js/background.js"
   },
