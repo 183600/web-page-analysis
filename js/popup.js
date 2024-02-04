@@ -9,6 +9,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         let wordCount = countWords(words);
         let sortedWordCount = sortWordCount(wordCount);
         displayWordCount(sortedWordCount);
+          console.log(text,words,wordCount,sortedWordCount)
       } else {
         document.getElementById("wordCount").innerText = "No text found on the current page.\n请刷新网页，或者切换到除浏览器和扩展意外的页面";
       }
@@ -55,9 +56,15 @@ function sortWordCount(wordCount) {
 
 function displayWordCount(sortedWordCount) {
   let wordCountDiv = document.getElementById("wordCount");
-  for (let item of sortedWordCount) {
-    let wordDiv = document.createElement("div");
-    wordDiv.innerText = item[0] + ": " + item[1];
-    wordCountDiv.appendChild(wordDiv);
+  let wordCountOutput = "";
+
+  for (let i = 0; i < sortedWordCount.length; i++) {
+    let word = sortedWordCount[i][0].trim(); // 使用 trim() 方法去掉单词两端的空格
+    if (word !== "") {
+      let count = sortedWordCount[i][1];
+      wordCountOutput += word + ": " + count + "<br>";
+    }
   }
+
+  wordCountDiv.innerHTML = wordCountOutput;
 }
