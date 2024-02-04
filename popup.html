@@ -37,21 +37,22 @@ color: #213547;
 color: #213547;
     font-size: 22px;
     margin-left: 20px;
+    margin-bottom: 15px;
   }
-  h3 {
+  h2 {
 color: #213547;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 15px;
   }
   </style> 
+<script src="js/wordcloud2.min.js"></script>
   <script src="js/popup.js"></script>
 </head>
 <body>
-  <p>词频</p>
-<div id="specialCharacters">
-  <h2>换行符和空格信息</h2>
+  <h2>词频</h2>
   <div id="specialCharactersInfo"></div>
 </div>
+<canvas id="wordcloud"></canvas>
   <div id="wordCount"></div>
 </body>
 </html>

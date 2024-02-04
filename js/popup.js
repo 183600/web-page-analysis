@@ -1,5 +1,21 @@
 //Copyright 2024 183600
 //本项目基于chrome-extensions-samples-main修改，并且此文件修改了
+function displaySpecialCharactersInfo(text) {
+  let specialCharactersDiv = document.getElementById("specialCharactersInfo");
+  let specialCharactersInfo = "";
+
+  let newlineCount = (text.match(/\n/g) || []).length;
+  let spaceCount = (text.match(/ /g) || []).length;
+
+  specialCharactersInfo += "换行符数量: " + newlineCount + "<br>";
+  specialCharactersInfo += "空格数量: " + spaceCount + "<br>";
+
+  specialCharactersDiv.innerHTML = specialCharactersInfo;
+}
+
+// 在合适的地方调用 displaySpecialCharactersInfo() 方法，传入相应的文本内容
+// 例如，如果你有一个名为 text 的变量存储了文本内容，可以使用以下代码来调用该方法：
+// displaySpecialCharactersInfo(text);
 chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, {action: "getText"}, function(response) {
     try {
@@ -10,6 +26,21 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         let sortedWordCount = sortWordCount(wordCount);
         displayWordCount(sortedWordCount);
           console.log(text,words,wordCount,sortedWordCount)
+        let wordFrequency = sortedWordCount;
+// 假设 wordFrequency 是一个包含单词和它们的频率的对象
+// 例如：{ "apple": 10, "banana": 5, "orange": 8, ... }
+
+// 创建一个空的数组，用于存储 WordCloud.js 需要的数据格式
+let wordCloudData = [];
+
+// 将 wordFrequency 对象转换为 WordCloud.js 需要的数据格式
+for (let word in wordFrequency) {
+  wordCloudData.push({ text: word, size: wordFrequency[word] });
+}
+
+// 使用 WordCloud.js 创建词云图
+WordCloud(document.getElementById('wordcloud'), { list: wordCloudData });
+displaySpecialCharactersInfo(text)
       } else {
         document.getElementById("wordCount").innerText = "No text found on the current page.\n请刷新网页，或者切换到除浏览器和扩展意外的页面";
       }
