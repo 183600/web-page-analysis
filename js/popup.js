@@ -25,22 +25,10 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         let wordCount = countWords(words);
         let sortedWordCount = sortWordCount(wordCount);
         displayWordCount(sortedWordCount);
-          console.log(text,words,wordCount,sortedWordCount)
-        let wordFrequency = sortedWordCount;
-// 假设 wordFrequency 是一个包含单词和它们的频率的对象
-// 例如：{ "apple": 10, "banana": 5, "orange": 8, ... }
+        displaySpecialCharactersInfo(text);
 
-// 创建一个空的数组，用于存储 WordCloud.js 需要的数据格式
-let wordCloudData = [];
-
-// 将 wordFrequency 对象转换为 WordCloud.js 需要的数据格式
-for (let word in wordFrequency) {
-  wordCloudData.push({ text: word, size: wordFrequency[word] });
-}
-
-// 使用 WordCloud.js 创建词云图
-WordCloud(document.getElementById('wordcloud'), { list: wordCloudData });
-displaySpecialCharactersInfo(text)
+        // 将词频用词云图显示出来
+        displayWordCloud(sortedWordCount);
       } else {
         document.getElementById("wordCount").innerText = "No text found on the current page.\n请刷新网页，或者切换到除浏览器和扩展意外的页面";
       }
@@ -50,6 +38,22 @@ displaySpecialCharactersInfo(text)
   });
 });
 
+// 创建一个新的函数来生成词云图并将其显示在页面上
+function displayWordCloud(sortedWordCount) {
+  let wordCloudData = [];
+
+  // 将 sortedWordCount 转换为 WordCloud.js 需要的数据格式
+  for (let i = 0; i < sortedWordCount.length; i++) {
+    let word = sortedWordCount[i][0].trim();
+    if (word !== "") {
+      let count = sortedWordCount[i][1];
+      wordCloudData.push({ text: word, size: count });
+    }
+  }
+
+  // 使用 WordCloud.js 创建词云图
+  WordCloud(document.getElementById('wordcloud'), { list: wordCloudData });
+}
 // ... (其他函数保持不变)
 
 function tokenizeText(text) {
