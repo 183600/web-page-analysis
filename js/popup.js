@@ -52,7 +52,7 @@ function displayWordCloud(sortedWordCount) {
   }
 
   // 使用 WordCloud.js 创建词云图
-  WordCloud(document.getElementById('wordcloud'), { list: wordCloudData });
+  WordCloud(document.getElementById('wordcloud'), { list: sortedWordCount });
 }
 // ... (其他函数保持不变)
 
