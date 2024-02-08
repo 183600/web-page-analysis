@@ -20,15 +20,17 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, {action: "getText"}, function(response) {
     try {
       if (response && response.text) {
-        let text = response.text;
+        let texta = response.text;
+let text = texta.replace(/[^\w\s]/gi, '');
         let words = tokenizeText(text);
         let wordCount = countWords(words);
         let sortedWordCount = sortWordCount(wordCount);
-        displayWordCount(sortedWordCount);
+        //displayWordCount(sortedWordCount);
         displaySpecialCharactersInfo(text);
 
         // 将词频用词云图显示出来
         displayWordCloud(sortedWordCount);
+
       } else {
         document.getElementById("wordCount").innerText = "No text found on the current page.\n请刷新网页，或者切换到除浏览器和扩展意外的页面";
       }
@@ -52,7 +54,10 @@ function displayWordCloud(sortedWordCount) {
   }
 
   // 使用 WordCloud.js 创建词云图
-  WordCloud(document.getElementById('wordcloud'), { list: sortedWordCount });
+  WordCloud(document.getElementById('wordcloud'), { list: sortedWordCount 
+    width: 600px;
+    height: 600px;
+  });
 }
 // ... (其他函数保持不变)
 
