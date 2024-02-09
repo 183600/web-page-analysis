@@ -28,6 +28,12 @@ let text = texta.replace(/[^\w\s]/gi, '');
         //displayWordCount(sortedWordCount);
         displaySpecialCharactersInfo(text);
 
+// 获取 canvas 元素
+var canvas = document.getElementById('wordcloud');
+var ctx = canvas.getContext('2d');
+
+// 调整词云图的显示比例
+ctx.scale(2, 2); // 以2倍比例放大词云图
         // 将词频用词云图显示出来
         displayWordCloud(sortedWordCount);
 
@@ -55,8 +61,6 @@ function displayWordCloud(sortedWordCount) {
 
   // 使用 WordCloud.js 创建词云图
   WordCloud(document.getElementById('wordcloud'), { list: sortedWordCount 
-    width: 600px;
-    height: 600px;
   });
 }
 // ... (其他函数保持不变)
