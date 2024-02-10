@@ -25,6 +25,7 @@ let text = texta.replace(/[^\w\s]/gi, '');
         let words = tokenizeText(text);
         let wordCount = countWords(words);
         let sortedWordCount = sortWordCount(wordCount);
+console.log(sortedWordCount)
         //displayWordCount(sortedWordCount);
         displaySpecialCharactersInfo(text);
 
