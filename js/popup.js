@@ -50,13 +50,40 @@ function displayWordCloud(sortedWordCount) {
     let word = sortedWordCount[i][0].trim();
     if (word !== "") {
       let count = sortedWordCount[i][1];
-      wordCloudData.push({ text: word, size: count });
+      wordCloudData.push({ text: word, value: count }); // 这里使用了 value 而不是 size
     }
   }
 
   // 使用 WordCloud.js 创建词云图
-  WordCloud(document.getElementById('wordcloud'), { list: sortedWordCount 
-  });
+  var myChart = echarts.init(document.getElementById('wordcloud'));
+  var option = {
+    series: [{
+      type: 'wordCloud',
+      gridSize: 20,
+      sizeRange: [12, 50],
+      rotationRange: [-90, 90],
+      shape: 'circle',
+      width: '100%',
+      height: '100%',
+      textStyle: {
+        normal: {
+          color: function () {
+            return 'rgb(' + [
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160),
+              Math.round(Math.random() * 160)
+            ].join(',') + ')';
+          }
+        },
+        emphasis: {
+          shadowBlur: 10,
+          shadowColor: '#333'
+        }
+      },
+      data: wordCloudData // 这里使用了转换后的 wordCloudData
+    }]
+  };
+  myChart.setOption(option);
 }
 // ... (其他函数保持不变)
 
