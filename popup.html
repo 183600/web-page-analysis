@@ -17,48 +17,49 @@ limitations under the License.
   -->
 
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 <head>
-  <title>Word Cloud</title>
-  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
-  <script>
-    // 接收来自 content script 发送的词云图数据
-    chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-      // 使用 ECharts 创建清晰度高的词云图
-      var myChart = echarts.init(document.getElementById('wordCloud'));
-      var option = {
-        series: [{
-          type: 'wordCloud',
-          gridSize: 1, // 设置 gridSize 为1，提高清晰度
-          sizeRange: [12, 50],
-          rotationRange: [-90, 90],
-          shape: 'circle',
-          width: '100%',
-          height: '100%',
-          textStyle: {
-            normal: {
-              color: function () {
-                return 'rgb(' + [
-                  Math.round(Math.random() * 160),
-                  Math.round(Math.random() * 160),
-                  Math.round(Math.random() * 160)
-                ].join(',') + ')';
-              }
-            },
-            emphasis: {
-              shadowBlur: 10,
-              shadowColor: '#333'
-            }
-          },
-          data: request.wordCloudData
-        }]
-      };
-      myChart.setOption(option);
-    });
-  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</script>
+  <title>Text Counter</title>
+  <style>
+    body {
+overflow: hidden;
+      width: 700px; /* 设置宽度为300像素 */
+    }
+  canvas {
+    border: 1px solid black;
+      width: 700px; /* 设置宽度为300像素 */
+  }
+  div {
+    font-size: 16px;
+color: #213547;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  p {
+color: #213547;
+    font-size: 22px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+  }
+  h2 {
+color: #213547;
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+  </style> 
+<script src="js/d3@5.js"></script>
+<script src="js/d3-cloud@1.js"></script>
+<script src="js/wordcloud.js"></script>
+  <script src="js/popup.js"></script>
 </head>
 <body>
-  <div id="wordCloud" style="width: 100%; height: 400px;"></div>
+  <h2>词频</h2>
+  <div id="specialCharactersInfo"></div>
+</div>
+<canvas id="wordcloud"></canvas>
+  <div id="wordCount"></div>
 </body>
 </html>
+
