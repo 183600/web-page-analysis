@@ -1,4 +1,7 @@
 //Copyright 2024 183600
+//Copyright 2024 183600
+//本项目基于chrome-extensions-samples-main修改，并且此文件修改了
+//Copyright 2024 183600
 //本项目基于chrome-extensions-samples-main修改，并且此文件修改了
 function displaySpecialCharactersInfo(text) {
   let specialCharactersDiv = document.getElementById("specialCharactersInfo");
@@ -25,9 +28,9 @@ let text = texta.replace(/[^\w\s]/gi, '');
         let words = tokenizeText(text);
         let wordCount = countWords(words);
         let sortedWordCount = sortWordCount(wordCount);
-console.log(sortedWordCount)
         //displayWordCount(sortedWordCount);
         displaySpecialCharactersInfo(text);
+	console.log(words,wordCount,sortedWordCount)
 
         // 将词频用词云图显示出来
         displayWordCloud(sortedWordCount);
@@ -43,20 +46,24 @@ console.log(sortedWordCount)
 
 // 创建一个新的函数来生成词云图并将其显示在页面上
 function displayWordCloud(sortedWordCount) {
-  let wordCloudData = [];
+	var wc = new Js2WordCloud(document.getElementById('main'))
+    wordFreqData =sortedWordCount
 
-  // 将 sortedWordCount 转换为 WordCloud.js 需要的数据格式
-  for (let i = 0; i < sortedWordCount.length; i++) {
-    let word = sortedWordCount[i][0].trim();
-    if (word !== "") {
-      let count = sortedWordCount[i][1];
-      wordCloudData.push({ text: word, size: count });
+	option = {
+        //https://ecomfe.github.io/echarts-wordcloud/example/logo.png
+        //imageShape:'https://ecomfe.github.io/echarts-wordcloud/example/logo.png',
+        tooltip: {
+            show: true,
+        },
+        list: wordFreqData,
+        fontSizeFactor:10,
+        maxFontSize: 200, //最大字号
+        minFontSize: 10, //最小字号
+        color: 'random-light',//random-light/random-dark
+        backgroundColor: '#333', // 背景颜色
+        rotateRatio: 1 // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
     }
-  }
-
-  // 使用 WordCloud.js 创建词云图
-  WordCloud(document.getElementById('wordcloud'), { list: sortedWordCount 
-  });
+    wc.setOption(option)
 }
 // ... (其他函数保持不变)
 
