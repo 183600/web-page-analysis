@@ -60,7 +60,7 @@ function displayWordCloud(sortedWordCount) {
         maxFontSize: 200, //最大字号
         minFontSize: 10, //最小字号
         color: 'random-light',//random-light/random-dark
-        backgroundColor: '#333', // 背景颜色
+        backgroundColor: '#FFFFFF', // 背景颜色
         rotateRatio: 1 // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
     }
     wc.setOption(option)
@@ -92,13 +92,14 @@ function countWords(words) {
 function sortWordCount(wordCount) {
   let sortedWordCount = [];
   for (let word in wordCount) {
-    sortedWordCount.push([word, wordCount[word]]);
+    sortedWordCount.push([word, wordCount[word]+100000]); // 将数字替换为它们的三次方
   }
   sortedWordCount.sort(function(a, b) {
     return b[1] - a[1];
   });
   return sortedWordCount;
 }
+
 
 function displayWordCount(sortedWordCount) {
   let wordCountDiv = document.getElementById("wordCount");
