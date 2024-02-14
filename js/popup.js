@@ -23,14 +23,13 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
   chrome.tabs.sendMessage(tabs[0].id, {action: "getText"}, function(response) {
     try {
       if (response && response.text) {
-        let texta = response.text;
-let text = texta.replace(/[^\w\s]/gi, '');
+        let text = response.text;
         let words = tokenizeText(text);
         let wordCount = countWords(words);
         let sortedWordCount = sortWordCount(wordCount);
         //displayWordCount(sortedWordCount);
         displaySpecialCharactersInfo(text);
-	console.log(words,wordCount,sortedWordCount)
+	console.log(text,words,wordCount,sortedWordCount)
 
         // 将词频用词云图显示出来
         displayWordCloud(sortedWordCount);
@@ -92,13 +91,14 @@ function countWords(words) {
 function sortWordCount(wordCount) {
   let sortedWordCount = [];
   for (let word in wordCount) {
-    sortedWordCount.push([word, wordCount[word]+100000]); // 将数字替换为它们的三次方
+    sortedWordCount.push([word, wordCount[word]+100000]);
   }
   sortedWordCount.sort(function(a, b) {
     return b[1] - a[1];
   });
   return sortedWordCount;
 }
+
 
 
 function displayWordCount(sortedWordCount) {
