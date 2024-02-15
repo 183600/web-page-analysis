@@ -91,13 +91,16 @@ function countWords(words) {
 function sortWordCount(wordCount) {
   let sortedWordCount = [];
   for (let word in wordCount) {
-    sortedWordCount.push([word, wordCount[word]+100000]);
+    if (wordCount[word] >= 10) { // 只有当数字大于等于 10 时才放入 sortedWordCount 中
+      sortedWordCount.push([word, wordCount[word]+100000]);
+    }
   }
   sortedWordCount.sort(function(a, b) {
     return b[1] - a[1];
   });
   return sortedWordCount;
 }
+
 
 
 
@@ -115,4 +118,5 @@ function displayWordCount(sortedWordCount) {
 
   wordCountDiv.innerHTML = wordCountOutput;
 }
+
 
