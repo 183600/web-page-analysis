@@ -47,7 +47,7 @@ chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 function displayWordCloud(sortedWordCount) {
 	var wc = new Js2WordCloud(document.getElementById('main'))
     wordFreqData =sortedWordCount
-var colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
+var colors = ['#D77127', '#484965', '#2D9D87'];
 
 	option = {
         //https://ecomfe.github.io/echarts-wordcloud/example/logo.png
@@ -59,7 +59,7 @@ var colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#00FFFF', '#FF00FF'];
         fontSizeFactor:10,
         maxFontSize: 310, //最大字号
         minFontSize: 10, //最小字号
-        //color: 'random-light',//random-light/random-dark
+        color: 'random-light',//random-light/random-dark
 colors: colors,
         rotateRatio: 0, // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
 noDataLoadingOption: {                                  // 无数据提示。

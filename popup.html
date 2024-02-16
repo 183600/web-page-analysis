@@ -44,6 +44,25 @@ color: #213547;
     margin-left: 10px;
     margin-top: 15px;
   }
+  .card {
+  transition: 0.3s;
+  border-radius: 10px; /* 添加圆角 */
+  background-color: #f0f0f0; /* 设置背景色 */
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 0px;
+}
+
+.huanhangfushuliang {
+    font-size: 16px;
+}
+
+
   </style>
 </head>
 <body>
@@ -52,6 +71,14 @@ color: #213547;
 </div>
 <script src="js/js2wordcloud.js"></script>
 <div id="main" style="width: 700px;height: 400px;"></div>
+<div class="card">
+	<div class="card">
+  <div class="container">
+    <p class="huanhangfushuliang">换行符数量</p>
+  </div>
+</div>
+
+
   <script src="js/popup.js"></script>
 </body>
 </html>
