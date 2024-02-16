@@ -60,13 +60,15 @@ function displayWordCloud(sortedWordCount) {
         minFontSize: 10, //最小字号
         color: 'random-light',//random-light/random-dark
         backgroundColor: '#FFFFFF', // 背景颜色
-        rotateRatio: 0 // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
-series: [{
-    type: 'wordCloud',
-    shape: 'circle',
-    gridSize: 1,
-    // ...
-  }]
+        rotateRatio: 0, // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
+noDataLoadingOption: {                                  // 无数据提示。
+        backgroundColor: '#FFFFFF',
+        text: '暂无数据',
+        textStyle: {
+            color: '#213547',
+            fontSize: 14
+        }
+    }
 
     }
     wc.setOption(option)
