@@ -56,11 +56,18 @@ function displayWordCloud(sortedWordCount) {
         },
         list: wordFreqData,
         fontSizeFactor:10,
-        maxFontSize: 200, //最大字号
+        maxFontSize: 310, //最大字号
         minFontSize: 10, //最小字号
         color: 'random-light',//random-light/random-dark
         backgroundColor: '#FFFFFF', // 背景颜色
-        rotateRatio: 1 // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
+        rotateRatio: 0 // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
+series: [{
+    type: 'wordCloud',
+    shape: 'circle',
+    gridSize: 1,
+    // ...
+  }]
+
     }
     wc.setOption(option)
 }
