@@ -49,6 +49,10 @@ function displayWordCloud(sortedWordCount) {
     wordFreqData =sortedWordCount
 var colors = ['#D77127', '#484965', '#2D9D87'];
 
+	function getRandomColor() {
+  var randomIndex = Math.floor(Math.random() * colors.length);
+  return colors[randomIndex];
+}
 	option = {
         //https://ecomfe.github.io/echarts-wordcloud/example/logo.png
         //imageShape:'https://ecomfe.github.io/echarts-wordcloud/example/logo.png',
@@ -58,8 +62,8 @@ var colors = ['#D77127', '#484965', '#2D9D87'];
         list: wordFreqData,
         fontSizeFactor:10,
         maxFontSize: 310, //最大字号
-        minFontSize: 10, //最小字号
-        color: 'random-light',//random-light/random-dark
+        minFontSize: 25, //最小字号
+        color: getRandomColor,//random-light/random-dark
 colors: colors,
         rotateRatio: 0, // 字体倾斜(旋转)概率，1代表总是倾斜(旋转)
 noDataLoadingOption: {                                  // 无数据提示。
