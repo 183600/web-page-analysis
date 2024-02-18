@@ -4,16 +4,13 @@
 //Copyright 2024 183600
 //本项目基于chrome-extensions-samples-main修改，并且此文件修改了
 function displaySpecialCharactersInfo(text) {
-  let specialCharactersDiv = document.getElementById("specialCharactersInfo");
-  let specialCharactersInfo = "";
-
   let newlineCount = (text.match(/\n/g) || []).length;
   let spaceCount = (text.match(/ /g) || []).length;
 
-  specialCharactersInfo += "换行符数量: " + newlineCount + "<br>";
-  specialCharactersInfo += "空格数量: " + spaceCount + "<br>";
-
-  specialCharactersDiv.innerHTML = specialCharactersInfo;
+  let newlineCountDiv = document.getElementById("newlineCountxianshi");
+  let spaceCountDiv = document.getElementById("spaceCountxianshi");
+  newlineCountDiv.innerHTML = "换行符数量: " + newlineCount + "<br>";
+  spaceCountDiv.innerHTML = "空格数量: " + spaceCount + "<br>";
 }
 
 // 在合适的地方调用 displaySpecialCharactersInfo() 方法，传入相应的文本内容

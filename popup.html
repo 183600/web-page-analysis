@@ -35,40 +35,46 @@ color: #213547;
   }
   h2 {
 color: #213547;
-    margin-left: 10px;
-    margin-top: 15px;
+    margin-left: 20px;
+    margin-top: 25px;
   }
   .card {
-  border-radius: 17px; /* 添加圆角 */
-  height: 34px; /* 添加圆角 */
-    display: inline-block; /* 让卡片宽度随内容变化 */
-  background-color: #f0f0f0; /* 设置背景色 */
+  background-color: #f0f0f0;
+  border-radius: 35px; /* 设置圆角使其呈现胶囊形状 */
+  padding: 0px 10px;
+  display: inline-block;
+    margin-left: 15px;
 }
 
-.card:hover {
-}
-
-.container {
-}
-
-.huanhangfushuliang {
+.specialCharactersInfo2 {
     font-size: 16px;
-    margin-left: 1px;
+  padding: 0px 10px;
 }
+
+.specialCharactersInfo3 {
+    margin-left: 5px;
+}
+    p {
+color: #213547;
+    }
 
 
   </style>
 </head>
 <body>
-  <h2>词频</h2>
+  <h2>本网页词频</h2>
   <div id="specialCharactersInfo" style="font-size: 16px;color: #213547;margin-left: 10px;margin-bottom: 20px;"></div>
 </div>
 <script src="js/js2wordcloud.js"></script>
-<div id="main" style="width: 700px;height: 400px;"></div>
-<div class="card">
-	<div class="card">
-    <p class="huanhangfushuliang">换行符数量</p>
+  <div class="specialCharactersInfo3">
+  <div class="card">
+    <p class="specialCharactersInfo2" id="newlineCountxianshi">换行符数量</p>
+  </div>
+  <div class="card">
+    <p class="specialCharactersInfo2" id="spaceCountxianshi">换行符数量</p>
+  </div>
 </div>
+<div id="main" style="width: 700px;height: 400px;"></div>
 
 
   <script src="js/popup.js"></script>
