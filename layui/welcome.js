@@ -1,4 +1,3 @@
-
 layui.use(function(){
   var layer = layui.layer;
   var form = layui.form;
