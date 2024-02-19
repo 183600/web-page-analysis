@@ -2,20 +2,35 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quick Start - Layui</title>
-  <link href="layui/css/layui.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>测试 - Layui</title>
+  <link rel="stylesheet" href="layui/css/layui.css">
 </head>
 <body>
-  <!-- HTML Content -->
-  <script src="layui/layui.js"></script>
-  <script>
-  // Usage
-  layui.use(function(){
-    var layer = layui.layer;
-    // Welcome
-    layer.msg('Hello World', {icon: 6});
-  });
-  </script>
+
+<div class="layui-container">
+  <div class="layui-progress" style="margin: 15px 0 30px;">
+    <div class="layui-progress-bar" lay-percent="100%"></div>
+  </div>
+  
+  
+  <div class="layui-btn-container">
+    <button class="layui-btn" test-active="test-form">一个按钮</button>
+    <button class="layui-btn layui-btn-normal" id="test2">当前日期</button>
+  </div>
+  
+  <blockquote class="layui-elem-quote" style="margin-top: 30px;">
+    <div class="layui-text">
+      <ul>
+        <li>您当前预览的是：<span>Layui-v<span id="version"></span></span></li>
+        <li>Layui 是一套开源免费的 Web UI（界面）组件库。这是一个极其简洁的演示页面</li>
+      </ul>
+    </div>
+  </blockquote>
+</div>
+
+<!-- body 末尾处引入 layui -->
+<script src="layui/welcome.js"></script>
+  <script src="js/popup.js"></script>
 </body>
 </html>
