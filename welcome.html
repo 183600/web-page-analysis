@@ -2,35 +2,42 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>测试 - Layui</title>
+  <title>词频设置</title>
   <link rel="stylesheet" href="layui/css/layui.css">
+  <style>
+    .layui-card-header {
+    margin-top: 5px;
+   display: flex;
+   align-items: center;     /* 垂直居中 */
+    height: 50px;
+    }
+    .word-frequency {
+    height: 50px;
+      font-size: 24px;
+      font-weight: bold;
+   display: flex;
+   align-items: center;     /* 垂直居中 */
+    }
+  </style>
 </head>
 <body>
-
-<div class="layui-container">
-  <div class="layui-progress" style="margin: 15px 0 30px;">
-    <div class="layui-progress-bar" lay-percent="100%"></div>
-  </div>
-  
-  
-  <div class="layui-btn-container">
-    <button class="layui-btn" test-active="test-form">一个按钮</button>
-    <button class="layui-btn layui-btn-normal" id="test2">当前日期</button>
-  </div>
-  
-  <blockquote class="layui-elem-quote" style="margin-top: 30px;">
-    <div class="layui-text">
-      <ul>
-        <li>您当前预览的是：<span>Layui-v<span id="version"></span></span></li>
-        <li>Layui 是一套开源免费的 Web UI（界面）组件库。这是一个极其简洁的演示页面</li>
-      </ul>
+  <div class="layui-container">
+    <div class="layui-row">
+      <div class="layui-col-md1 icon-container">
+      </div>
+      <div class="layui-col-md11">
+        <div class="layui-card">
+          <div class="layui-card-header">
+            <span class="word-frequency">词频</span>
+          </div>
+        </div>
+          <div class="layui-card-body">
+            <p>这是一段文字，可以根据需要进行替换</p>
+          </div>
+      </div>
     </div>
-  </blockquote>
-</div>
+  </div>
 
-<!-- body 末尾处引入 layui -->
-<script src="layui/welcome.js"></script>
-  <script src="js/popup.js"></script>
+  <script src="layui/layui.js"></script>
 </body>
 </html>
