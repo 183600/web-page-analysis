@@ -16,9 +16,6 @@
      "js": ["js/content.js"]
    }
  ],
-"chrome_url_overrides": {
-  "newtab": "welcome.html"
-},
 "icons": {"48": "icon48.png",
           "128": "icon192.png" },
   "permissions": [
