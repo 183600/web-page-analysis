@@ -16,6 +16,7 @@
      "js": ["js/content.js"]
    }
  ],
+"options_page": "options.html",
 "icons": {"48": "icon48.png",
           "128": "icon192.png" },
   "permissions": [
