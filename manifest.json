@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "获取网页词频",
-  "version": "1.0",
-  "description": "本项目基于chrome-extensions-samples-main修改。本项目使用MIT许可。本项目是一个Chrome扩展，用来分析网站词频",
+  "version": "1.1",
+  "description": "本项目原网页分析，基于chrome-extensions-samples-main修改，使用MIT许可开源，是一个Chrome扩展，用来分析网站词频并生成词云图",
 "background": {
     "service_worker": "js/background.js"
   },
