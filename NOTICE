@@ -1,0 +1,21 @@
+本项目使用MIT许可开源，链接https://gitee.com/qwe12345678/web-page-analysis
+
+本项目使用的一些开源项目:
+chrome-extensions-samples-main（使用Apache License 2.0许可）（我在2023年和2024年修改），github地址https://github.com/GoogleChrome/chrome-extensions-samples
+layui（使用MIT许可），gitee地址https://gitee.com/layui/
+
+chrome-extensions-samples-main中的一些版权信息:
+`chrome-extensions-samples` are authored by Google and are licensed under the [Apache License, Version 2.0](/LICENSE).
+// Copyright 2023 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "获取网页词频",
-  "version": "1.1",
-  "description": "本项目原网页分析，基于chrome-extensions-samples-main修改，使用MIT许可开源，是一个Chrome扩展，用来分析网站词频并生成词云图",
+  "name": "页析 - 分析网页内容",
+  "version": "2.2",
+  "description": "分析网页内容，使用MIT许可开源",
 "background": {
     "service_worker": "js/background.js"
   },
@@ -17,10 +17,17 @@
    }
  ],
 "options_page": "options.html",
+"devtools_page": "devtools.html",
 "icons": {"48": "icon48.png",
           "128": "icon192.png" },
+  "side_panel": {
+    "default_path": "sidebar.html"
+  },
   "permissions": [
       "tabs",
+"storage",
+"contextMenus",
 "activeTab"
   ]
 }
+

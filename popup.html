@@ -22,51 +22,17 @@ limitations under the License.
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </script>
   <title>Text Counter</title>
-  <style>
-    body {
-overflow: hidden;
-      width: 700px; /* 设置宽度为300像素 */
-    }
-  .specialCharactersInfo {
-    font-size: 16px;
-color: #213547;
-    margin-left: 10px;
-    margin-bottom: 20px;
-  }
-  h2 {
-color: #213547;
-    margin-left: 20px;
-    margin-top: 25px;
-  }
-  .card {
-  background-color: #f0f0f0;
-  border-radius: 35px; /* 设置圆角使其呈现胶囊形状 */
-  padding: 0px 10px;
-  display: inline-block;
-    margin-left: 15px;
-}
-
-.specialCharactersInfo2 {
-    font-size: 16px;
-  padding: 0px 10px;
-}
-
-.specialCharactersInfo3 {
-    margin-left: 5px;
-}
-    p {
-color: #213547;
-    }
-
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="style/popup.css">
 </head>
 <body>
   <h2>本网页频繁出现的词词频</h2>
   <div id="specialCharactersInfo" style="font-size: 16px;color: #213547;margin-left: 10px;margin-bottom: 20px;"></div>
-</div>
 <script src="js/js2wordcloud.js"></script>
+<button id="selectElement" type="button">点击列表项分析列表和列表项</button>
   <div class="specialCharactersInfo3">
+  <div class="card">
+    <p class="specialCharactersInfo2" id="cishuxianshi">词数</p>
+  </div>
   <div class="card">
     <p class="specialCharactersInfo2" id="newlineCountxianshi">换行符数量</p>
   </div>

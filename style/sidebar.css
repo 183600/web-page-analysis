@@ -1,0 +1,49 @@
+
+    body {
+overflow: hidden;
+      width: 700px; /* 设置宽度为300像素 */
+    }
+  .specialCharactersInfo {
+    font-size: 16px;
+color: #213547;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  h2 {
+color: #213547;
+    margin-left: 20px;
+    margin-top: 25px;
+  }
+  .card {
+  background-color: #f0f0f0;
+  border-radius: 35px; /* 设置圆角使其呈现胶囊形状 */
+  padding: 0px 10px;
+  display: inline-block;
+    margin-left: 15px;
+}
+
+.specialCharactersInfo2 {
+    font-size: 16px;
+  padding: 0px 10px;
+}
+
+.specialCharactersInfo3 {
+    margin-left: 5px;
+}
+    p {
+color: #213547;
+    }
+    button {
+  background-color: #2e63ff;
+color: #ffffff;
+  padding: 10px 20px; /* 内边距 */
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border: none; /* 无边框 */
+  border-radius: 10px; /* 圆角 */
+  text-align: center; /* 文字居中 */
+  font-size: 16px; /* 字体大小 */
+  width: 660px; /* 按钮宽度填满父容器 */
+    }
+
